@@ -7,7 +7,6 @@
 内网穿透
 ```sh
 ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/1.3/chuantou.py
-ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/1.3/chuantou.py
 ## 使用
 添加变量qlsubdomain，值为固定域名
 建议首次手动运行一次任务，访问URL查看任务日志
