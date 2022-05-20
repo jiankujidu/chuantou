@@ -1,11 +1,10 @@
-# qinglong_nwct
+# qinglong_chuantou
 
 ## 说明
 基于钉钉开发平台
 
 ## 拉取：
-ql raw https://gitee.com/lstcml/qlnwct/raw/master/nwct.py
-
+ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/1.3/chuantou.py
 ## 使用
 添加变量qlsubdomain，值为固定域名
 建议首次手动运行一次任务，访问URL查看任务日志
