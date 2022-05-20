@@ -1,10 +1,13 @@
 # qinglong_chuantou
 
 
+
+* 原作者[四天](https://gitee.com/lstcml)
+
 ## 说明
-（https://gitee.com/lstcml）
+
 基于钉钉开发平台，目前只支持5700端口
-* 使用
+* 使用方法
 ## 第一步拉库：
 ```sh
 ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/1.3/chuantou.py
