@@ -1,13 +1,13 @@
 # qinglong_chuantou
 
-
-
 # 原作者:[四天](https://gitee.com/lstcml)
+
+## 个人QQ交流群：[641307462](https://qm.qq.com/cgi-bin/qm/qr?k=B5meSMnKmXOIACK9VyWTYjIxdLWpSbRm&authKey=EMQROjU6NjgLUwmHnYJF052JFdpfBq7mB+nNuC5JRxk5JZyFbbFzgT1fSzAq4vHB&noverify=0)
 
 ## 说明
 
-基于钉钉开发平台，目前只支持5700端口
-有人说新版有问题我就备份了个旧版本
+基于钉钉开发平台，目前只支持5700端口，有人说新版有问题我就备份了个旧版本
+
 * 使用方法
 ## 第一步拉库：
 ```sh
@@ -33,4 +33,3 @@ xxxx.vaiwan.com
 [python-ngrok](https://github.com/hauntek/python-ngrok)
 [open-dingtalk](https://github.com/open-dingtalk/pierced)
 
-## 个人QQ交流群：[641307462](https://qm.qq.com/cgi-bin/qm/qr?k=B5meSMnKmXOIACK9VyWTYjIxdLWpSbRm&authKey=EMQROjU6NjgLUwmHnYJF052JFdpfBq7mB+nNuC5JRxk5JZyFbbFzgT1fSzAq4vHB&noverify=0)
