@@ -11,12 +11,12 @@ from time import sleep
 def update():
     print("当前运行的脚本版本：" + str(version ))
     try:
-        r1 = requests.get("https://gitee.com/lstcml/qlnwct/raw/master/nwct.py").text
+        r1 = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/1.3/chuantou.py").text
         r2 = re.findall(re.compile("version = \d.\d"),r1)[0].split("=")[1].strip()
         if float(r2) > version:
             print("发现新版本：" + r2)
             print("正在自动更新脚本...")
-            os.system("ql raw https://gitee.com/lstcml/qlnwct/raw/master/nwct.py &")
+            os.system("ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/1.3/chuantou.py &")
     except:
         pass
     
@@ -34,7 +34,7 @@ def other_character(str):
 # 下载Ngrok主程序
 def download_ngrok():
     if not os.path.exists("ngrok.py"):
-        res = requests.get("https://gitee.com/lstcml/qlnwct/raw/master/ngrok.py")
+        res = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/1.3/ngrok.py")
         with open("ngrok.py", "wb") as f:
             f.write(res.content)
     start_nwct()
