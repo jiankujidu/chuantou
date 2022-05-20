@@ -1,20 +1,27 @@
 # qinglong_chuantou
 
 ## 说明
-基于钉钉开发平台
-
-## 拉取：
-内网穿透
+基于钉钉开发平台，目前只支持5700端口
+* 使用
+## 第一步拉库：
 ```sh
 ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/1.3/chuantou.py
 ```
-## 使用
-添加变量qlsubdomain，值为固定域名
-建议首次手动运行一次任务，访问URL查看任务日志
-
-## 定时
-建议10分钟：
+## 第二步填前缀变量（英文数据都可以）:
+```sh
+export qlsubdomain='xxxx'
+```
+## 第三步定时10分钟一次:
+```sh
 */10 * * * *
+```
+## 这第四步那就是访问咯:
+```sh
+xxxx.vaiwan.com
+```
+
+* 建议首次手动运行一次任务，访问URL查看任务日志
+
 
 ## 链接
 [python-ngrok](https://github.com/hauntek/python-ngrok)
