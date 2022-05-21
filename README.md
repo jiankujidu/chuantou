@@ -6,16 +6,27 @@
 
 ## 说明
 
-基于钉钉开发平台，目前只支持5700端口，有人说新版有问题我就备份了个旧版本
+基于钉钉开发平台，有人说新版有问题我就备份了个旧版本
 
 * 使用方法
 ## 第一步拉库：
+* 青龙面版5700端口
 ```sh
 ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/1.3/chuantou.py
 ```
+* elecV2P8000端口
+```sh
+ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/1.3/chuantou8000.py
+```
+
 ## 第二步填前缀变量（英文数据都可以）:
+* 青龙5700端口
 ```sh
 export qlsubdomain='xxxx'
+```
+* elecV2P8000端口
+```sh
+export qlsubdomain8000='xxxx'
 ```
 ## 第三步定时10分钟一次:
 ```sh
