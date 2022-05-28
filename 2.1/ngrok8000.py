@@ -29,7 +29,7 @@ body['hostname'] = ''
 body['subdomain'] = subdomain
 body['rport'] = 0
 body['lhost'] = '127.0.0.1'
-body['lport'] = 5700
+body['lport'] = 8000
 Tunnels.append(body)  # 加入渠道队列
 
 reqIdaddr = dict()
