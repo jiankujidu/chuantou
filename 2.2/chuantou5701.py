@@ -33,14 +33,14 @@ from requests.auth import HTTPBasicAuth
 def update():
     print("当前运行的脚本版本：" + str(version))
     try:
-        r1 = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou5701/main/2.2/chuantou5701.py").text
+        r1 = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/2.2/chuantou5701.py").text
         r2 = re.findall(re.compile("version = \d.\d"), r1)[0].split("=")[1].strip()
         if float(r2) > version:
-chuantou5701
-chuantou5701
+            print("发现新版本：" + r2)
+            print("正在自动更新脚本...")
             os.system("kill -9 `ps -ef | grep 'ngrok5701.py' | grep -v 'grep' | awk '{print $1}'`")
             os.system("rm -f ngrok5701.py")
-            os.system("ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou5701/main/2.2/chuantou5701.py &")
+            os.system("ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/2.2/chuantou5701.py &")
     except:
         pass
 
@@ -58,7 +58,7 @@ def other_character(str):
 # 下载Ngrok主程序
 def download_ngrok():
     if not os.path.exists("ngrok5701.py"):
-        res = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou5701/main/2.2/ngrok5701.py")
+        res = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/2.2/ngrok5701.py")
         with open("ngrok5701.py", "wb") as f:
             f.write(res.content)
     start_nwct()
@@ -110,7 +110,7 @@ def start_nwct():
 # 获取服务器地址
 def get_server():
     try:
-        res = requests.get("ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou5701/main/2.2/server.fd").text
+        res = requests.get("ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/2.2/server.fd").text
         return json.loads(res)
     except:
         return json.loads('[{"server":"vaiwan.com","port":"443","subdomain":"vaiwan.com"}]')
@@ -122,7 +122,7 @@ def load_send():
     sys.path.append(cur_path)
     sendNotifPath = cur_path + "/sendNotify.py"
     if not os.path.exists(sendNotifPath):
-        res = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou5701/main/2.2/sendNotify.py")
+        res = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/2.2/sendNotify.py")
         with open(sendNotifPath, "wb") as f:
             f.write(res.content)
         
