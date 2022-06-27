@@ -33,14 +33,14 @@ from requests.auth import HTTPBasicAuth
 def update():
     print("当前运行的脚本版本：" + str(version))
     try:
-        r1 = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/2.2/chuantou.py").text
+        r1 = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/2.2/chuantou5701.py").text
         r2 = re.findall(re.compile("version = \d.\d"), r1)[0].split("=")[1].strip()
         if float(r2) > version:
             print("发现新版本：" + r2)
             print("正在自动更新脚本...")
-            os.system("kill -9 `ps -ef | grep 'ngrok.py' | grep -v 'grep' | awk '{print $1}'`")
-            os.system("rm -f ngrok.py")
-            os.system("ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/2.2/chuantou.py &")
+            os.system("kill -9 `ps -ef | grep 'ngrok5701.py' | grep -v 'grep' | awk '{print $1}'`")
+            os.system("rm -f ngrok5701.py")
+            os.system("ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/2.2/chuantou5701.py &")
     except:
         pass
 
@@ -57,9 +57,9 @@ def other_character(str):
 
 # 下载Ngrok主程序
 def download_ngrok():
-    if not os.path.exists("ngrok.py"):
-        res = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/2.2/ngrok.py")
-        with open("ngrok.py", "wb") as f:
+    if not os.path.exists("ngrok5701.py"):
+        res = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/2.2/ngrok5701.py")
+        with open("ngrok5701.py", "wb") as f:
             f.write(res.content)
     start_nwct()
 
@@ -88,9 +88,9 @@ def start_nwct():
     for i in range(count):
         qlurl = "http://%s.%s" % (subdomain, servers[i]["subdomain"])
         if not process_daemon(qlurl):
-            os.system("kill -9 `ps -ef | grep 'ngrok.py' | grep -v 'grep' | awk '{print $1}'`")
+            os.system("kill -9 `ps -ef | grep 'ngrok5701.py' | grep -v 'grep' | awk '{print $1}'`")
             sleep(2)
-            os.system("python3 ngrok.py %s %s %s %s &" %(servers[i]["server"], servers[i]["port"], subdomain, qlhttp_auth))
+            os.system("python3 ngrok5701.py %s %s %s %s &" %(servers[i]["server"], servers[i]["port"], subdomain, qlhttp_auth))
             print("启动中...")
             sleep(5)
             if process_daemon(qlurl):
@@ -137,7 +137,7 @@ if __name__ == '__main__':
     get_server()
     version = 2.2
     try:
-        subdomain = os.environ['qlsubdomain']
+        subdomain = os.environ['qlsubdomain5701']
     except:
         subdomain = ""
     try:
@@ -159,7 +159,7 @@ if __name__ == '__main__':
         print("变量qlnwctupdate未设置，脚本自动更新未开启！")
 
     if len(subdomain) < 1:
-        print("请新增变量qlsubdomain指定域名前缀！")
+        print("请新增变量qlsubdomain5701指定域名前缀！")
     else:
         if other_character(subdomain):
             if qlhttp_auth == "" or ":" in qlhttp_auth:
@@ -167,4 +167,4 @@ if __name__ == '__main__':
             else:
                 print("变量qlhttp_auth格式错误！例：qinglong:123456")
         else:
-            print("变量qlsubdomain仅支持英文数字组合！")
+            print("变量qlsubdomain5701仅支持英文数字组合！")
