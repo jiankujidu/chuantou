@@ -26,10 +26,10 @@ Tunnels = list()  # 全局渠道赋值
 body = dict()
 body['protocol'] = 'http'
 body['hostname'] = ''
-body['subdomain5701'] = subdomain5701
+body['subdomain'] = subdomain
 body['rport'] = 0
 body['lhost'] = '127.0.0.1'
-body['lport'] = 5701
+body['lport'] = 5700
 Tunnels.append(body)  # 加入渠道队列
 
 reqIdaddr = dict()
