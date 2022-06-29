@@ -2,7 +2,7 @@
 # Version: v1.3
 # Created by lstcml on 2022/04/01
 # 建议定时10分钟：*/10 * * * *
-
+#个人QQ交流群：641307462
 import os
 import re
 import requests
