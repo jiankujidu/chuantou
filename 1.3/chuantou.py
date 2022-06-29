@@ -8,6 +8,9 @@ import re
 import requests
 from time import sleep
 
+'''
+new Env('wskey转换');
+'''
 def update():
     print("当前运行的脚本版本：" + str(version ))
     try:
