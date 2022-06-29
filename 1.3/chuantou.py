@@ -9,7 +9,7 @@ import requests
 from time import sleep
 
 '''
-new Env('wskey转换');
+new Env('钉钉内网穿透');
 '''
 def update():
     print("当前运行的脚本版本：" + str(version ))
