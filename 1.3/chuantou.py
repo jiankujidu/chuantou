@@ -10,6 +10,7 @@ import requests
 from time import sleep
 
 '''
+cron: */10 * * * *
 new Env('钉钉内网穿透');
 '''
 def update():
