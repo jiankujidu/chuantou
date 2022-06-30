@@ -73,7 +73,7 @@ def start_nwct():
         else:
              print("启动失败！请重试！")
     else:
-        print("程序运行中...\n青龙面板：" + qlurl)
+        print("程序运行中...\nQQ交流群:641307462\n青龙面板：" + qlurl)
 
 if __name__ == '__main__':
     version = 1.3
