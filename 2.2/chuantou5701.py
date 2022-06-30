@@ -111,7 +111,7 @@ def start_nwct():
                 else:
                     print("启动失败！正在切换服务器%s..." % str(i+2))
         else:
-            print("程序运行中...\n青龙面板：%s" % qlurl)
+            print("程序运行中...\nQQ交流群:641307462\n青龙面板：%s" % qlurl)
             break
 
 # 获取服务器地址
