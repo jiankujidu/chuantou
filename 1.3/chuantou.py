@@ -14,13 +14,13 @@ cron: */10 * * * *
 new Env('钉钉内网穿透');
 '''
 def update():
-    print("当前运行的脚本版本：" + str(version ))
+    print("公众号:一起瞎折腾\n当前运行的脚本版本：" + str(version ))
     try:
         r1 = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/1.3/chuantou.py").text
         r2 = re.findall(re.compile("version = \d.\d"),r1)[0].split("=")[1].strip()
         if float(r2) > version:
-            print("发现新版本：" + r2)
-            print("正在自动更新脚本...")
+            print("公众号:一起瞎折腾\n发现新版本：" + r2)
+            print("公众号:一起瞎折腾\n正在自动更新脚本...")
             os.system("ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/1.3/chuantou.py &")
     except:
         pass
@@ -63,17 +63,17 @@ def start_nwct():
     if process_daemon(qlurl) != "success":
         os.system("kill -9 `ps -ef | grep 'ngrok.py' | grep -v 'grep' | awk '{print $1}'`")
         os.system("python3 ngrok.py " + subdomain + "&")
-        print("启动中...")
+        print("公众号:一起瞎折腾\n启动中...")
         sleep(5)
         r = process_daemon(qlurl)
         if r == "success":
-            print("启动成功！\n青龙面板：" + qlurl)
+            print("公众号:一起瞎折腾\n启动成功！\n青龙面板：" + qlurl)
         elif r == "regustered":
             print(subdomain + "已被注册，请重新设置！")
         else:
              print("启动失败！请重试！")
     else:
-        print("程序运行中...\nQQ交流群:641307462\n青龙面板：" + qlurl)
+        print("程序运行中...\n公众号:一起瞎折腾\nQQ交流群:641307462\n青龙面板：" + qlurl)
 
 if __name__ == '__main__':
     version = 1.3
@@ -83,9 +83,9 @@ if __name__ == '__main__':
     except:
         subdomain = ""
     if len(subdomain) < 1:
-        print("请新增变量qlsubdomain指定域名前缀！")
+        print("公众号:一起瞎折腾\n请新增变量qlsubdomain指定域名前缀！")
     else:
         if other_character(subdomain):
             download_ngrok()
         else:
-            print("变量qlsubdomain仅支持英文数字组合！")
+            print("公众号:一起瞎折腾\n变量qlsubdomain仅支持英文数字组合！")
