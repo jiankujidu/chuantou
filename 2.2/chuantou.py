@@ -101,16 +101,16 @@ def start_nwct():
             sleep(5)
             if process_daemon(qlurl):
                 if load_send():
-                     print("启动成功！\n青龙面板：%s" % qlurl)
-                     send("内网穿透通知", "青龙面板访问地址：" + qlurl)
+                     print("启动成功！\n公众号：一起瞎折腾\n青龙面板：%s" % qlurl)
+                     send("内网穿透通知", "公众号：一起瞎折腾\n青龙面板访问地址：" + qlurl)
                 break
             else:
                 if i == count-1:
-                    print("启动失败！请重试...")
+                    print("公众号：一起瞎折腾\n启动失败！请重试...")
                 else:
-                    print("启动失败！正在切换服务器%s..." % str(i+2))
+                    print("公众号：一起瞎折腾\n启动失败！正在切换服务器%s..." % str(i+2))
         else:
-            print("程序运行中...\nQQ交流群:641307462\n青龙面板：%s" % qlurl)
+            print("程序运行中...\n公众号：一起瞎折腾\nQQ交流群:641307462\n青龙面板：%s" % qlurl)
             break
 
 # 获取服务器地址
@@ -162,15 +162,15 @@ if __name__ == '__main__':
     if check_update == "true":
         update()
     else:
-        print("变量qlnwctupdate未设置，脚本自动更新未开启！")
+        print("公众号：一起瞎折腾\n变量qlnwctupdate未设置，脚本自动更新未开启！")
 
     if len(subdomain) < 1:
-        print("请新增变量qlsubdomain指定域名前缀！")
+        print("公众号：一起瞎折腾\n请新增变量qlsubdomain指定域名前缀！")
     else:
         if other_character(subdomain):
             if qlhttp_auth == "" or ":" in qlhttp_auth:
                 download_ngrok()
             else:
-                print("变量qlhttp_auth格式错误！例：qinglong:123456")
+                print("公众号：一起瞎折腾\n变量qlhttp_auth格式错误！例：qinglong:123456")
         else:
-            print("变量qlsubdomain仅支持英文数字组合！")
+            print("公众号：一起瞎折腾\n变量qlsubdomain仅支持英文数字组合！")
