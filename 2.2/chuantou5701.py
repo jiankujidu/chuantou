@@ -102,16 +102,16 @@ def start_nwct():
             sleep(5)
             if process_daemon(qlurl):
                 if load_send():
-                     print("启动成功！\n青龙面板：%s" % qlurl)
-                     send("内网穿透通知", "青龙面板访问地址：" + qlurl)
+                     print("公众号:一起瞎折腾\n启动成功！\n青龙面板：%s" % qlurl)
+                     send("内网穿透通知", "\n公众号:一起瞎折腾\n青龙面板访问地址：" + qlurl)
                 break
             else:
                 if i == count-1:
-                    print("启动失败！请重试...")
+                    print("启动失败！请重试...\n公众号:一起瞎折腾")
                 else:
-                    print("启动失败！正在切换服务器%s..." % str(i+2))
+                    print("启动失败！正在切换服务器%s...\n公众号:一起瞎折腾" % str(i+2))
         else:
-            print("程序运行中...\nQQ交流群:641307462\n青龙面板：%s" % qlurl)
+            print("程序运行中...\n公众号:一起瞎折腾\nQQ交流群:641307462\n青龙面板：%s" % qlurl)
             break
 
 # 获取服务器地址
