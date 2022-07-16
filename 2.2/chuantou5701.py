@@ -172,6 +172,6 @@ if __name__ == '__main__':
             if qlhttp_auth == "" or ":" in qlhttp_auth:
                 download_ngrok()
             else:
-                print("变量qlhttp_auth格式错误！例：qinglong:123456")
+                print("公众号：一起瞎折腾\n变量qlhttp_auth格式错误！例：qinglong:123456")
         else:
-            print("变量qlsubdomain5701仅支持英文数字组合！")
+            print("公众号：一起瞎折腾\n变量qlsubdomain5701仅支持英文数字组合！")
