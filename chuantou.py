@@ -24,6 +24,11 @@ v1.9更新记录：
 4、新增pushplus+推送，需提前在配置文件中配置token
 '''
 
+'''
+cron: */10 * * * *
+new Env('内网穿透');
+'''
+
 import os
 import re
 import sys
@@ -39,8 +44,8 @@ def update():
         r1 = requests.get("https://ghproxy.com/https://github.com/jiankujidu/chuantou/raw/main/2.2/nwct.py").text
         r2 = re.findall(re.compile("version = \d.\d"), r1)[0].split("=")[1].strip()
         if float(r2) > version:
-            print("发现新版本：" + r2)
-            print("正在自动更新脚本...")
+            print("公众号:一起瞎折腾\nQQ交流群:641307462\n发现新版本：" + r2)
+            print("公众号:一起瞎折腾\nQQ交流群:641307462\n正在自动更新脚本...")
             os.system("kill -9 `ps -ef | grep 'ngrok.py' | grep -v 'grep' | awk '{print $1}'`")
             os.system("rm -f ngrok.py")
             os.system("ql raw https://ghproxy.com/https://github.com/jiankujidu/chuantou/raw/main/2.2/nwct.py &")
@@ -98,16 +103,16 @@ def start_nwct():
             sleep(5)
             if process_daemon(qlurl):
                 if load_send():
-                     print("启动成功！\n青龙面板：%s" % qlurl)
-                     send("内网穿透通知", "青龙面板访问地址：" + qlurl)
+                     print("公众号:一起瞎折腾\nQQ交流群:641307462\n启动成功！\n青龙面板：%s" % qlurl)
+                     send("公众号:一起瞎折腾\nQQ交流群:641307462\n内网穿透通知", "青龙面板访问地址：" + qlurl)
                 break
             else:
                 if i == count-1:
-                    print("启动失败！请重试...")
+                    print("公众号:一起瞎折腾\nQQ交流群:641307462\n启动失败！请重试...")
                 else:
-                    print("启动失败！正在切换服务器%s..." % str(i+2))
+                    print("公众号:一起瞎折腾\nQQ交流群:641307462\n启动失败！正在切换服务器%s..." % str(i+2))
         else:
-            print("程序运行中...\n青龙面板：%s" % qlurl)
+            print("公众号:一起瞎折腾\nQQ交流群:641307462\n程序运行中...\n青龙面板：%s" % qlurl)
             break
 
 # 获取服务器地址
@@ -159,15 +164,15 @@ if __name__ == '__main__':
     if check_update == "true":
         update()
     else:
-        print("变量qlnwctupdate未设置，脚本自动更新未开启！")
+        print("公众号:一起瞎折腾\nQQ交流群:641307462\n变量qlnwctupdate未设置，脚本自动更新未开启！")
 
     if len(subdomain) < 1:
-        print("请新增变量qlsubdomain指定域名前缀！")
+        print("公众号:一起瞎折腾\nQQ交流群:641307462\n请新增变量qlsubdomain指定域名前缀！")
     else:
         if other_character(subdomain):
             if qlhttp_auth == "" or ":" in qlhttp_auth:
                 download_ngrok()
             else:
-                print("变量qlhttp_auth格式错误！例：qinglong:123456")
+                print("公众号:一起瞎折腾\nQQ交流群:641307462\n变量qlhttp_auth格式错误！例：qinglong:123456")
         else:
-            print("变量qlsubdomain仅支持英文数字组合！")
+            print("公众号:一起瞎折腾\nQQ交流群:641307462\n变量qlsubdomain仅支持英文数字组合！")
