@@ -9,6 +9,10 @@ v1.1
 1、自动安装必要模块；
 2、支持自定义域名前缀；
 '''
+'''
+cron: */10 * * * *
+new Env('内网穿透');
+'''
 import os
 import re
 import sys
