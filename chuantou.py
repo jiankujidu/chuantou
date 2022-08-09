@@ -88,7 +88,7 @@ def start_nwct(parameter):
                 print("公众号:一起瞎折腾\n启动内网穿透成功！\n青龙面板：%s" % qlurl)
                 print("若访问穿透地址出现安全检测界面，点击蓝色'Click to Continue'按钮可跳过！")
                 sys.stdout.flush()
-                send("内网穿透通知", "青龙面板访问地址：" + qlurl)
+                send("内网穿透通知", "公众号:一起瞎折腾\n青龙面板访问地址：" + qlurl)
         else:
             print("启动内网穿透失败...")
             sys.stdout.flush()
