@@ -10,8 +10,8 @@ v1.1
 2、支持自定义域名前缀；
 '''
 '''
-cron: */10 * * * *
-new Env('内网穿透');
+cron: */60 * * * *
+new Env('localtunnel内网穿透');
 '''
 import os
 import re
@@ -23,13 +23,13 @@ def update():
     print("当前运行的脚本版本：" + str(version))
     sys.stdout.flush()
     try:
-        r1 = requests.get("https://raw.githubusercontent.com/jiankujidu/chuantou/main/chuantou.py").text
+        r1 = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/chuantou.py").text
         r2 = re.findall(re.compile("version = \d.\d"), r1)[0].split("=")[1].strip()
         if float(r2) > version:
             print("发现新版本：" + r2)
             print("正在自动更新脚本...")
             sys.stdout.flush()
-            os.system("ql raw https://raw.githubusercontent.com/jiankujidu/chuantou/main/chuantou.py &")
+            os.system("ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/main/chuantou.py &")
             os._exit()
     except:
         pass
@@ -68,9 +68,9 @@ def get_url():
                 sys.stdout.flush()
                 return _content.split(': ')[1].replace('\n','')
             else:
-                return 'https://raw.githubusercontent.com/jiankujidu/chuantou'
+                return 'https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/'
     except:
-        return 'https://raw.githubusercontent.com/jiankujidu/chuantou'
+        return 'https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/'
 
 # 执行程序
 def start_nwct(parameter):
@@ -78,22 +78,22 @@ def start_nwct(parameter):
         if parameter == 1:
             os.system('lt --port 5700 > localtunnel.lstcml &')
         else:
-            os.system('lt --port 5700 -s ' + subdomain + ' > chuantou.lstcml &')
+            os.system('lt --port 5700 -s ' + subdomain + ' > localtunnel.lstcml &')
         print("正在启动内网穿透...")
         sleep(10)
         print("正在检测穿透状态...")
         sys.stdout.flush()
         if process_daemon():
             if load_send():
-                print("公众号:一起瞎折腾\n启动内网穿透成功！\n青龙面板：%s" % qlurl)
+                print("启动内网穿透成功！\n公众号：一起瞎折腾\n青龙面板：%s" % qlurl)
                 print("若访问穿透地址出现安全检测界面，点击蓝色'Click to Continue'按钮可跳过！")
                 sys.stdout.flush()
-                send("内网穿透通知", "公众号:一起瞎折腾\n青龙面板访问地址：" + qlurl)
+                send("内网穿透通知", "青龙面板访问地址：" + qlurl)
         else:
             print("启动内网穿透失败...")
             sys.stdout.flush()
     else:
-        print("穿透程序已在运行...\n青龙面板：%s" % qlurl)
+        print("穿透程序已在运行...\n公众号：一起瞎折腾\n青龙面板：%s" % qlurl)
         sys.stdout.flush()
         
 # 推送
@@ -103,7 +103,7 @@ def load_send():
     sys.path.append(cur_path)
     sendNotifPath = cur_path + "/sendNotify.py"
     if not os.path.exists(sendNotifPath):
-        res = requests.get("https://raw.githubusercontent.com/jiankujidu/chuantou/main/sendNotify.py")
+        res = requests.get("https://ghproxy.com/https://raw.githubusercontent.com/jiankujidu/chuantou/raw/master/sendNotify.py")
         with open(sendNotifPath, "wb") as f:
             f.write(res.content)
         
