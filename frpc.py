@@ -3,7 +3,7 @@
 
 '''
 cron: */10 * * * *
-new Env('Cpolar内网穿透');
+new Env('Frpc内网穿透');
 '''
 import os, requests
 n = os.popen("ps -ef | grep frpc").read()
